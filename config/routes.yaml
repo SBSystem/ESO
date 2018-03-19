@@ -1,3 +1,10 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+#---------------------------------------------INDEX
+index:
+    path: /
+    controller: App\Controller\index\LoginController::loginPage
+index2:
+    path: /index
+    controller: App\Controller\LoginController::loginPage
+index3:
+    path: /login
+    controller: App\Controller\LoginController::loginPage
