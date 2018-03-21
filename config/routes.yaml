@@ -1,0 +1,14 @@
+#---------------------------------------------INDEX
+index:
+    path: /
+    controller: App\Controller\index\LoginController::loginPage
+index2:
+    path: /index
+    controller: App\Controller\index\LoginController::loginPage
+index3:
+    path: /login
+    controller: App\Controller\index\LoginController::loginPage
+#------------------------------------------------ADMINISTRATOR
+adminDashboard:
+    path: admin/dashboard
+    controller: App\Controller\Admin\DashboardController::dashboard
