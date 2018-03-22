@@ -57,7 +57,7 @@ class User implements UserInterface, \Serializable
     {
         return $this->id;
     }
-    public function getUsername(): ?string
+    public function getUsername(): string
     {
         return $this->username;
     }
@@ -66,7 +66,7 @@ class User implements UserInterface, \Serializable
         $this->username = $username;
         return $this;
     }
-    public function getPassword(): ?string
+    public function getPassword(): string
     {
         return $this->password;
     }
@@ -75,7 +75,7 @@ class User implements UserInterface, \Serializable
         $this->password = $password;
         return $this;
     }
-    public function getEmail(): ?string
+    public function getEmail(): string
     {
         return $this->email;
     }
@@ -95,14 +95,14 @@ class User implements UserInterface, \Serializable
     }
     public function getRoles(): array
     {
-        return $this->role;
+        return [$this->role];
     }
     public function setRole(string $role): self
     {
         $this->role = $role;
         return $this;
     }
-    public function getCode(): ?int
+    public function getCode(): int
     {
         return $this->code;
     }
@@ -111,7 +111,7 @@ class User implements UserInterface, \Serializable
         $this->code = $code;
         return $this;
     }
-    public function getName(): ?string
+    public function getName(): string
     {
         return $this->name;
     }
@@ -120,7 +120,7 @@ class User implements UserInterface, \Serializable
         $this->name = $name;
         return $this;
     }
-    public function getSurname(): ?string
+    public function getSurname(): string
     {
         return $this->surname;
     }
@@ -129,7 +129,7 @@ class User implements UserInterface, \Serializable
         $this->surname = $surname;
         return $this;
     }
-    public function getPesel(): ?int
+    public function getPesel(): int
     {
         return $this->pesel;
     }
