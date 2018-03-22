@@ -7,6 +7,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ * @ORM\Table(name="users")
  */
 class User implements UserInterface, \Serializable
 {
@@ -137,5 +138,35 @@ class User implements UserInterface, \Serializable
     {
         $this->pesel = $pesel;
         return $this;
+    }
+    public function serialize()
+    {
+        return serialize(array(
+            $this->id,
+            $this->username,
+            $this->password,
+            $this->email,
+            $this->logged,
+            $this->role,
+            $this->code,
+            $this->name,
+            $this->surname,
+            $this->pesel
+        ));
+    }
+    public function unserialize($serialized)
+    {
+        list (
+            $this->id,
+            $this->username,
+            $this->password,
+            $this->email,
+            $this->logged,
+            $this->role,
+            $this->code,
+            $this->name,
+            $this->surname,
+            $this->pesel
+        ) = unserialize($serialized);
     }
 }
