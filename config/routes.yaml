@@ -10,5 +10,8 @@ index3:
     controller: App\Controller\index\LoginController::loginPage
 #------------------------------------------------ADMINISTRATOR
 adminDashboard:
-    path: admin/dashboard
-    controller: App\Controller\Admin\DashboardController::dashboard
+    path: administrator/dashboard
+    controller: App\Controller\Administrator\DashboardController::dashboard
+adminRooms:
+    path: administrator/administration/rooms
+    controller: App\Controller\Administrator\RoomController::listRooms
