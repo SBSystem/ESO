@@ -169,4 +169,6 @@ class User implements UserInterface, \Serializable
             $this->pesel
         ) = unserialize($serialized);
     }
+    public function getSalt(){}
+    public function eraseCredentials(){}
 }

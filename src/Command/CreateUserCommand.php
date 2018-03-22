@@ -41,7 +41,7 @@ class CreateUserCommand extends Command
         $output->writeln('Role: '.$input->getArgument('role'));
 
         $user = new User();
-        $user->setLogin($input->getArgument('login'));
+        $user->setUsername($input->getArgument('login'));
         $user->setPassword($input->getArgument('password'));
 
         $roleToUpperCase = 'ROLE_'.$this->stringToUpperCase($input->getArgument('role'));
