@@ -24,7 +24,7 @@ class CreateUserCommand extends Command
         $this->setName('app:create-user')
             ->setDescription('Create a new user for ESO')
             ->setHelp('This command allows you to create new user. \nRole: 
-            "administrator" - the admin for the system\n "teacher" - the teacher for the system\n')
+            "administrator" - the administrator for the system\n "teacher" - the teacher for the system\n')
             ->addArgument('login', InputArgument::REQUIRED, 'The login for the user')
             ->addArgument('password', InputArgument::REQUIRED, 'The password for new account')
             ->addArgument('role', InputArgument::REQUIRED, 'Role for new account.');
