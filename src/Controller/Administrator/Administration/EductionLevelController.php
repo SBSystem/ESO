@@ -2,11 +2,12 @@
 
 namespace App\Controller\Administrator\Administration;
 
+use App\AppBundle\Factory\CreateObject;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use App\Entity\EducationLevel;
 use Symfony\Component\HttpFoundation\Response;
 
-class ClassController extends Controller
+class EductionLevelController extends Controller
 {
     public function listClass(): Response
     {
@@ -14,7 +15,8 @@ class ClassController extends Controller
     }
     public function addClass(string $className, int $educatorId, string $educationLevel): EducationLevel
     {
-        $class = new EducationLevel();
+        $creator = new CreateObject();
+        $class = $creator->create('educationLevel');
         $class->setClassName($className);
         $class->setEducatorId($educatorId);
         $class->setClassLevel($educationLevel);

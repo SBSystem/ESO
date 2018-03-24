@@ -29,6 +29,7 @@ class EducationLevel
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * @ORM\ManyToOne(targetEntity="App\Entity\User")
      */
     private $EducatorId;
 
@@ -61,7 +62,7 @@ class EducationLevel
         return $this;
     }
 
-    public function getEducatorId(): int
+    public function getEducatorId(): User
     {
         return $this->EducatorId;
     }

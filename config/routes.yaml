@@ -19,7 +19,7 @@ adminRooms:
     controller: App\Controller\Administrator\Administration\RoomController::listRooms
 adminClassList:
     path: /administrator/administration/class
-    controller: App\Controller\Administrator\Administration\ClassController::listClass
+    controller: App\Controller\Administrator\Administration\EducationLevelController::listClass
 adminSubjectList:
     path: /administrator/administration/subject
     controller: App\Controller\Administrator\Administration\SubjectController::listSubject
