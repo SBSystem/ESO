@@ -8,11 +8,16 @@ use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 
 class LoginController extends Controller
 {
-    public function loginPage(Request $request, AuthenticationUtils $authUtils)
+    public function loginPage(Request $request, AuthenticationUtils $authUtils, AuthorizationCheckerInterface $authCheck)
     {
+        if($this->isGranted('ROLE_ADMIN')) {
+            $this->redirectToRoute('adminDashboard');
+        }
+
         $loginForm = $this->createFormBuilder()
             ->add('_username', TextType::class)
             ->add('_password', PasswordType::class)
@@ -25,4 +30,9 @@ class LoginController extends Controller
             'error' => $error
         ));
     }
+    public function logout()
+    {
+
+    }
+
 }
