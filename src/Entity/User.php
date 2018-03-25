@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -53,6 +55,16 @@ class User implements UserInterface, \Serializable
      * @ORM\Column(type="integer", nullable=true)
      */
     private $pesel;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\PrivateMessage", mappedBy="fromUser")
+     */
+    private $privateMessages;
+
+    public function __construct()
+    {
+        $this->privateMessages = new ArrayCollection();
+    }
 	
     public function getId()
     {
@@ -168,5 +180,38 @@ class User implements UserInterface, \Serializable
             $this->surname,
             $this->pesel
         ) = unserialize($serialized);
+    }
+    public function getSalt(){}
+    public function eraseCredentials(){}
+
+    /**
+     * @return Collection|PrivateMessage[]
+     */
+    public function getPrivateMessages(): Collection
+    {
+        return $this->privateMessages;
+    }
+
+    public function addPrivateMessage(PrivateMessage $privateMessage): self
+    {
+        if (!$this->privateMessages->contains($privateMessage)) {
+            $this->privateMessages[] = $privateMessage;
+            $privateMessage->setFromUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removePrivateMessage(PrivateMessage $privateMessage): self
+    {
+        if ($this->privateMessages->contains($privateMessage)) {
+            $this->privateMessages->removeElement($privateMessage);
+            // set the owning side to null (unless already changed)
+            if ($privateMessage->getFromUser() === $this) {
+                $privateMessage->setFromUser(null);
+            }
+        }
+
+        return $this;
     }
 }

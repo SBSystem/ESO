@@ -11,7 +11,7 @@ class DashboardController extends Controller
     public function dashboard(AuthorizationCheckerInterface $auth): Response
     {
         if($auth->isGranted('ROLE_ADMINISTRATOR') == false) {
-            $this->redirectToRoute('/');
+            $this->redirectToRoute('index');
         }
 
         return $this->render('administrator/dashboard.html.twig', array(

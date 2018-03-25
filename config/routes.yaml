@@ -8,10 +8,22 @@ index2:
 index3:
     path: /login
     controller: App\Controller\index\LoginController::loginPage
+logout:
+    path: /logout
 #------------------------------------------------ADMINISTRATOR
 adminDashboard:
-    path: administrator/dashboard
+    path: /administrator
     controller: App\Controller\Administrator\DashboardController::dashboard
 adminRooms:
-    path: administrator/administration/rooms
-    controller: App\Controller\Administrator\RoomController::listRooms
+    path: /administrator/administration/rooms
+    controller: App\Controller\Administrator\Administration\RoomController::listRooms
+adminClassList:
+    path: /administrator/administration/class
+    controller: App\Controller\Administrator\Administration\EducationLevelController::listClass
+adminSubjectList:
+    path: /administrator/administration/subject
+    controller: App\Controller\Administrator\Administration\SubjectController::listSubject
+#--------------------------------------------------- ALL USERS
+messageList:
+    path: /administrator/my-account/message-list-show
+    controller: App\Controller\AllUser\MyAccount\MessageController::listMessagesToMe

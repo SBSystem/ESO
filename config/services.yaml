@@ -22,6 +22,10 @@ services:
     App\Controller\:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
+    App\Controller\Administrator\:
+        resource: '../src/Controller/Administrator'
+    App\Controller\Administrator\Administration\:
+        resource: '../src/Controller/Administrator/Administration'
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
