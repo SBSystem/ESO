@@ -40,9 +40,16 @@ class CreateUserCommand extends Command
         $output->writeln('Password: '.$input->getArgument('password'));
         $output->writeln('Role: '.$input->getArgument('role'));
 
+        $password = $this->hashPassword($input->getArgument('password'));
+
+        /**
+         * Only for tests!
+         */
+        $output->writeln('Password after hash: '.$password);
+
         $user = new User();
         $user->setUsername($input->getArgument('login'));
-        $user->setPassword($input->getArgument('password'));
+        $user->setPassword($password);
 
         $roleToUpperCase = 'ROLE_'.$this->stringToUpperCase($input->getArgument('role'));
 
@@ -58,6 +65,11 @@ class CreateUserCommand extends Command
         $output->writeln('Saved!');
     }
 
+    private function hashPassword(string $password): string
+    {
+        $hash = password_hash($password, PASSWORD_BCRYPT);
+        return $hash;
+    }
     private function stringToUpperCase($string): string
     {
         return strtoupper($string);
