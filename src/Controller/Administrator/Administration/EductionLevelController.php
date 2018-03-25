@@ -2,7 +2,7 @@
 
 namespace App\Controller\Administrator\Administration;
 
-use App\AppBundle\Factory\CreateObject;
+use App\AppBundle\Factory\Creators\EducationLevelCreator;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use App\Entity\EducationLevel;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,8 +15,8 @@ class EductionLevelController extends Controller
     }
     public function addClass(string $className, int $educatorId, string $educationLevel): EducationLevel
     {
-        $creator = new CreateObject();
-        $class = $creator->create('educationLevel');
+        $creator = new EducationLevelCreator();
+        $class = $creator->createObject();
         $class->setClassName($className);
         $class->setEducatorId($educatorId);
         $class->setClassLevel($educationLevel);
