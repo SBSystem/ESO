@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\AllUser;
+namespace App\Controller\AllUser\MyAccount;
 
 use App\Entity\PrivateMessage;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
