@@ -20,19 +20,4 @@ class RoomController extends Controller
 
         ));
     }
-    public function addRoom(EntityManagerInterface $entityManager, string $roomName): Room
-    {
-        $room = new Room();
-        $room->setName($roomName);
-
-        $entityManager->persist($room);
-        $entityManager->flush();
-
-        return $room;
-    }
-    public function deleteRoom(EntityManagerInterface $entityManager, Room $room): bool
-    {
-        $entityManager->remove($room);
-        return true;
-    }
 }
