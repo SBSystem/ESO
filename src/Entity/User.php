@@ -142,11 +142,11 @@ class User implements UserInterface, \Serializable
         $this->surname = $surname;
         return $this;
     }
-    public function getPesel(): int
+    public function getPesel(): string
     {
         return $this->pesel;
     }
-    public function setPesel(?int $pesel): self
+    public function setPesel(?string $pesel): self
     {
         $this->pesel = $pesel;
         return $this;
