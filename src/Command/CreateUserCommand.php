@@ -7,7 +7,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Input\InputArgument;
 use Doctrine\ORM\EntityManagerInterface;
-use App\Entity\User;
+use App\AppBundle\Factory\Creators\UserCreator;
 
 class CreateUserCommand extends Command
 {
@@ -47,19 +47,13 @@ class CreateUserCommand extends Command
          */
         $output->writeln('Password after hash: '.$password);
 
-        $user = new User();
-        $user->setUsername($input->getArgument('login'));
-        $user->setPassword($password);
-
         $roleToUpperCase = 'ROLE_'.$this->stringToUpperCase($input->getArgument('role'));
+        
+        $user = new UserCreator();
+        $user->createObject($input->getArgument('login'), $password, 'CREATED BY CONSOLE', 0, $roleToUpperCase, 'CREATED BY CONSOLE', 'CREATED BY CONSOLE');
+        $object = $user->getObject();
 
-        $user->setRole($roleToUpperCase);
-        $user->setEmail('USER IS CREATED BY CONSOLE');
-        $user->setLogged(0);
-        $user->setName('CREATED BY CONSOLE');
-        $user->setSurname('CREATED BY CONSOLE');
-
-        $this->entityManager->persist($user);
+        $this->entityManager->persist($object);
         $this->entityManager->flush();
 
         $output->writeln('Saved!');
