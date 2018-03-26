@@ -119,7 +119,7 @@ class User implements UserInterface, \Serializable
     {
         return $this->code;
     }
-    public function setCode(?int $code): self
+    public function setCode(int $code): self
     {
         $this->code = $code;
         return $this;
@@ -146,7 +146,7 @@ class User implements UserInterface, \Serializable
     {
         return $this->pesel;
     }
-    public function setPesel(?string $pesel): self
+    public function setPesel(string $pesel): self
     {
         $this->pesel = $pesel;
         return $this;
