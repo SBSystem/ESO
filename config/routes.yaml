@@ -27,3 +27,7 @@ adminSubjectList:
 messageList:
     path: /administrator/my-account/message-list-show
     controller: App\Controller\AllUser\MyAccount\MessageController::listMessagesToMe
+#-------------------------------------------------------------------------API
+apiaddClass:
+    path: /api/addClass
+    controller: App\Controller\API\Administrator\EducationLevelAPI::create
