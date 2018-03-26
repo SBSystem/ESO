@@ -1,6 +1,6 @@
 <?php
 
-namespace App\AppBundle\API\Interfaces;
+namespace App\Controller\API\Interfaces;
 
 /**
  * Interface CRUD
