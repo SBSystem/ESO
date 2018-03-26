@@ -1,4 +1,4 @@
-# Współpracowanicy
+# Współpracownicy
 Wypisano osoby, które w jakiś sposób pomagały w tworzeniu systemu
 
 ## Obecnie pracujący nad powstaniem oprogramowania
