@@ -1,0 +1,51 @@
+/*
+* This file is part of the ESO system.
+*
+* (c) SBSystem 2018
+*
+* For the full license information please see LICENSE.md at https://github.com/SBSystem/ESO/LICENSE.md
+*/
+body
+{
+    background-color: #ebeeef;
+}
+
+/* login page */
+
+.form-col-image
+{
+    background-image: url("../images/loginPageBg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color:white;
+    font-weight: bolder;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 10px;
+    padding:0px;
+    margin-top:10%;
+}
+.bgimage_color
+{
+    background-color: rgba(54,84,99,0.7);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 10px;
+    padding:10px;
+}
+.login_form
+{
+    background-color:white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    -moz-border-radius-bottomright: 10px;
+}
+
+.form-control
+{
+    margin:10px;
+}
