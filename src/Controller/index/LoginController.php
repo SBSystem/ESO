@@ -14,7 +14,7 @@ class LoginController extends Controller
 {
     public function loginPage(Request $request, AuthenticationUtils $authUtils, AuthorizationCheckerInterface $authCheck)
     {
-        if($this->isGranted('ROLE_ADMIN')) {
+        if($this->isGranted('ROLE_ADMINISTRATOR')) {
             $this->redirectToRoute('adminDashboard');
         }
 
