@@ -27,7 +27,7 @@ class LoginController extends Controller
         $error = $authUtils->getLastAuthenticationError();
 
         return $this->render('index/login.html.twig', array(
-            'error' => $error
+            'error' => $error , 'title'=>"ESO :: Logowanie"
         ));
     }
     public function logout()
