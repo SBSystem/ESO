@@ -14,7 +14,7 @@ class DashboardController extends Controller
             $this->redirectToRoute('index');
         }
 
-        return $this->render('administrator/dashboard.html.twig', array(
+        return $this->render('administrator/dashboard/dashboard.html.twig', array(
 
         ));
 
