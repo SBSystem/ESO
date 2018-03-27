@@ -49,3 +49,87 @@ body
 {
     margin:10px;
 }
+
+.header
+{
+    background-color: rgba(0, 0, 0, 0.75);
+    padding-top:10px;
+    padding-bottom:10px;
+    color:white;
+}
+.header a
+{
+    color:white;
+}
+.header a:hover
+{
+    color: #f0f0f0;
+}
+.header a:visited
+{
+    color:white;
+}
+
+.header .site-logo
+{
+    font-size: 36px;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-shadow: rgb(3, 3, 3) 0px 2px 5px;
+    transition: all 0.7s ease;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+.header .site-logo span
+{
+    color : #0f51ff;
+}
+
+.header .menu_position
+{
+    font-size:26px;
+    padding-top:15px;
+    padding-bottom: 15px;
+    margin-left:0px;
+    margin-right:0px;
+}
+.header .menu_position:hover
+{
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-top:-10px;
+    margin-bottom:-15px;
+    padding-top:25px;
+    padding-bottom:25px;
+    border-bottom: 4px solid #0f51ff;
+}
+.header .active
+{
+
+    font-size:26px;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-top:-10px;
+    margin-bottom:-15px;
+    margin-left:0px;
+    margin-right:0px;
+    padding-top:25px;
+    padding-bottom:25px;
+    border-bottom: 4px solid #0f51ff;
+}
+.header .active:hover
+{
+    font-size:26px;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-top:-10px;
+    margin-bottom:-15px;
+    padding-top:25px;
+    padding-bottom:25px;
+    border-bottom: 4px solid #0f41bc;
+}
+.header .nomargin
+{
+    margin:0px;
+    padding:0px;
+}

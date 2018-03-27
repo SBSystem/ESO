@@ -5,12 +5,60 @@
     <meta charset="UTF-8">
     <meta name="author" content="SBSystem">
     <meta name="generator" content="ESO">
-<meta name="keywords" content="Elektroniczny dziennik, e-dziennik, dziennik, eso, szkola">
-<meta name="description" content="Elektroniczny dziennik ESO pozwoli Ci sprawdzać postępy twojego dziecka w nauce, obecności na lekcjach i wiele innnych!">
-<title>{% block title %}{% endblock %}</title>
-
+    <meta name="keywords" content="Elektroniczny dziennik, e-dziennik, dziennik, eso, szkola">
+    <meta name="description" content="Elektroniczny dziennik ESO pozwoli Ci sprawdzać postępy twojego dziecka w nauce, obecności na lekcjach i wiele innnych!">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/main.css">
+    <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
+    <div class="container-fluid">
+        <!-- Header Section -->
+        <div class="row text-center header">
+            <div class="col-xs-12 col-md-1 site-logo">
+                E<span>S</span>O
+            </div>
+            <div class="col-xs-12 col-md-10 ">
+                <div class="ccol-xs-6 col-md-3 nomargin">
+                    <div class="dropdown show active">
+                        <a class="dropdown-toggle" href="administracja" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Administracja
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="ccol-xs-6 col-md-3 nomargin">
+                    <div class="dropdown show  menu_position">
+                        <a class="dropdown-toggle" href="" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Klasy
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-1">
+                  <h2><a href="logout"> <i class="fas fa-sign-out-alt"></i></a></h2>
+            </div>
+        </div>
+        <!-- content Section -->
+        <div class="row">
 
+        </div>
+        <!-- footer Section -->
+        <div class="row">
+
+        </div>
+    </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>
