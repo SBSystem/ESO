@@ -21,14 +21,13 @@ class EducationLevelAPI extends Controller implements CRUD
     /**
      * This function is used to create education level
      */
-    public function create()
+    public function create(Request $request): JsonResponse
     {
         $jsonResponse = new JsonResponse();
-
-        if(isset($_POST['className']) && isset($_POST['classLevel']) && isset($_POST['educatorId'])){
-            $className = $_GET['className'];
-            $classLevel = $_POST['classLevel'];
-            $educatorId = $_POST['educatorId'];
+        if($request->request->has('className') && $request->request->has('classLevel') && $request->request->has('educatorId')){
+            $className = $request->request->get('className');
+            $classLevel = $request->request->get('classLevel');
+            $educatorId = $request->request->get('educatorId');
 
             $educationCreator = new EducationLevelCreator();
             $educationCreator->createObject($className, $educatorId, $classLevel);
@@ -47,7 +46,7 @@ class EducationLevelAPI extends Controller implements CRUD
                 'systemStatusCode' => 200
             ));
             $jsonResponse->setStatusCode(200);
-        }else{
+        }else {
             $jsonResponse->setData(array(
                 'httpStatusCode' => 400,
                 'message' => 'Variables does not exists!',
@@ -61,20 +60,19 @@ class EducationLevelAPI extends Controller implements CRUD
     /**
      * This function is used to delete education level
      */
-    public function delete(){}
+    public function delete(Request $request){}
 
     /**
      * This function is used to read education levels
+     * Alternative name: readAllRecords
      */
-    public function read()
+    public function read(Request $request): JsonResponse
     {
         $jsonResponse = new JsonResponse();
 
         $doctrine = $this->getDoctrine()->getManager();
 
         $levels = $doctrine->getRepository('educationLevel')->findAll();
-
-
 
         $jsonResponse->setData(array(
             'result' => $levels,
@@ -89,7 +87,7 @@ class EducationLevelAPI extends Controller implements CRUD
     /**
      * This function is used to update education level
      */
-    public function update()
+    public function update(Request $request)
     {
         // TODO: Implement update() method.
     }
