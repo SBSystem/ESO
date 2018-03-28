@@ -61,22 +61,7 @@ class EducationLevelAPI extends Controller implements CRUD
     /**
      * This function is used to delete education level
      */
-    public function delete()
-    {
-        $request = new Request();
-
-        $className = $request->request->get('class_name');
-        $classLevel = $request->request->get('class_level');
-        $educatorId = $request->request->get('educator_id');
-
-        $entity = $this->getDoctrine()->getManager();
-
-        $jsonResponse = new JsonResponse();
-        $jsonResponse->setData(array(
-            'success' => true
-        ));
-        return $jsonResponse;
-    }
+    public function delete(){}
 
     /**
      * This function is used to read education levels
