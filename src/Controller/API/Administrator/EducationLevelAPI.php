@@ -25,7 +25,7 @@ class EducationLevelAPI extends Controller implements CRUD
     {
         $jsonResponse = new JsonResponse();
 
-        if($_POST['className'] && $_POST['classLevel'] && $_POST['educatorId']){
+        if(isset($_POST['className']) && isset($_POST['classLevel']) && isset($_POST['educatorId'])){
             $className = $_GET['className'];
             $classLevel = $_POST['classLevel'];
             $educatorId = $_POST['educatorId'];
