@@ -70,8 +70,6 @@ class EducationLevelAPI extends Controller implements CRUD
         $educatorId = $request->request->get('educator_id');
 
         $entity = $this->getDoctrine()->getManager();
-        $entity->
-
 
         $jsonResponse = new JsonResponse();
         $jsonResponse->setData(array(
