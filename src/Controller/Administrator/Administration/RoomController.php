@@ -16,7 +16,7 @@ class RoomController extends Controller
             $this->redirectToRoute('/');
         }
 
-        return $this->render('administrator/administration/rooms.html.twig', array(
+        return $this->render('administrator/rooms/rooms.html.twig', array(
 
         ));
     }
