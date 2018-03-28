@@ -28,7 +28,7 @@ class EducationLevelAPI extends Controller implements CRUD
             $className = $request->request->get('className');
             $classLevel = $request->request->get('classLevel');
             $educatorId = $request->request->get('educatorId');
-
+            
             $educationCreator = new EducationLevelCreator();
             $educationCreator->createObject($className, $educatorId, $classLevel);
             $level = $educationCreator->getObject();
@@ -41,14 +41,12 @@ class EducationLevelAPI extends Controller implements CRUD
                 'educatorId' => $educatorId,
                 'classLevel' => $classLevel,
                 'className' => $className,
-                'httpStatusCode' => 200,
                 'message' => 'success',
                 'systemStatusCode' => 200
             ));
             $jsonResponse->setStatusCode(200);
         }else {
             $jsonResponse->setData(array(
-                'httpStatusCode' => 400,
                 'message' => 'Variables does not exists!',
                 'systemStatusCode' => 158
             ));
@@ -76,7 +74,6 @@ class EducationLevelAPI extends Controller implements CRUD
 
         $jsonResponse->setData(array(
             'result' => $levels,
-            'httpStatusCode' => 200,
             'message' => 'success',
             'systemStatusCode' => 200
          ));
